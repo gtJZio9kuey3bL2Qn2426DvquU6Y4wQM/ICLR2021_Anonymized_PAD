@@ -42,6 +42,7 @@ a.btn-right {border-radius: 0 6px 6px 0;}
 .noselect {-webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;}
 .bold {font-weight: bold;}
 .italic {font-style: italic;}
+div.spacing {width: 100%; height: 80px;}
 	</style>
 </head>
 
@@ -67,6 +68,12 @@ a.btn-right {border-radius: 0 6px 6px 0;}
 		<p class="abstract">
 			In most real world scenarios, a policy trained by reinforcement learning in one environment needs to be deployed in another, potentially quite different environment. However, generalization across different environments is known to be hard. A natural solution would be to keep training after deployment in the new environment, but this cannot be done if the new environment offers no reward signal. Our work explores the use of self-supervision to allow the policy to continue training after deployment without using any rewards. While previous methods explicitly anticipate changes in the new environment, we assume no prior knowledge of those changes yet still obtain significant improvements. Empirical evaluations are performed on diverse simulation environments from DeepMind Control suite and ViZDoom, as well as real robotic manipulation tasks in continuously changing environments, taking observations from an uncalibrated camera. Our method improves generalization in 28 out of 32 environments across various tasks and outperforms domain randomization on a majority of environments.
 		</p>
+	</div>
+	<div class="hr"></div>
+	<div>
+		<video width="100%" controls>
+			<source src="overview.mp4" type="video/mp4"/>
+		</video>
 	</div>
 	<div class="hr"></div>
 	<div>
@@ -117,28 +124,31 @@ a.btn-right {border-radius: 0 6px 6px 0;}
 				</div>
 			</div>
 		</div>
-		<p>
-			Additionally, we find that the relative improvement from PAD increases over time, measured across a wide range of environments and tasks:
-		</p>
-		<div class="figure" style="height: 320px; background-image: url(relative_improvement_compact.png);"></div>
-		<p>
-			For experimental details and results, please refer to our paper.
-		</p>
 	</div>
 	<div class="hr"></div>
 	<div>
-		<h2>Method</h2>
+		<h2>Robotic manipulation</h2>
 		<p>
-			During real world deployment of learned policies, reward signals are typically inaccessible. We propose a framework for Policy Adaptation during Deployment using self-supervision, which does not require a reward signal and allows for fast adaptation to diverse and continuously changing environments. Our method requires no prior knowledge about the nature of environment changes and - crucially - we also show that our method generally does not degrade the performance of a policy in its original training environment.
+			We train policies in simulation and deploy on a real robot, operating solely from an uncalibrated camera. PAD transfers successfully and can adapt to a variety of real-world environments.
 		</p>
-		<video width="100%" controls>
-			<source src="overview.mp4" type="video/mp4"/>
-		</video>
-		<!-- <div class="youtube">
-			<iframe width="784" height="442" src="https://www.youtube-nocookie.com/embed/a9DwLg0nRUQ" frameborder="0" allow="autoplay; encrypted-media;" allowfullscreen></iframe>
-			<div style="position: absolute; top: 0; width: 100%; height: 1px; background-color: #fff; z-index: 99;"></div>
-			<div style="position: absolute; bottom: 0; width: 100%; height: 1px; background-color: #fff; z-index: 99;"></div>
+		<!-- <div class="content-video">
+			<div class="content-video-container">
+				<video playsinline="" autoplay="" loop="" preload="" muted="" width="100%">
+					<source src="non_stationary_experiments_25s.mp4" type="video/mp4"/>
+				</video>
+			</div>
+			<div class="legend">
+				<div class="legend-item">
+					<span class="legend-symbol noselect" style="color: rgba(44,160,44,0.75)">--</span><span class="legend-symbol" style="color: rgba(214,39,40,0.75)">--</span><span class="legend-symbol" style="color: rgba(31,119,180,0.75)">--</span>SAC+IDM
+				</div>
+				<div class="legend-item">
+					<span class="legend-symbol noselect" style="color: rgba(186,176,172,0.75)">--</span>CURL (Srinivas et al.)
+				</div>
+				<div class="legend-item">
+					<span class="legend-symbol noselect" style="color: rgba(44,160,44,1)">—</span><span class="legend-symbol" style="color: rgba(214,39,40,1)">—</span><span class="legend-symbol" style="color: rgba(31,119,180,1)">—</span><span class="bold">SAC+IDM (PAD)</span>
+				</div>
+			</div>
 		</div> -->
 	</div>
-	</div>
+	<div class="spacing"></div>
 </div>
