@@ -65,7 +65,7 @@ a.btn-right {border-radius: 0 6px 6px 0;}
 	<div>
 		<h2>Abstract</h2>
 		<p class="abstract">
-			In most real world scenarios, a policy trained by reinforcement learning in one environment needs to be deployed in another, potentially quite different environment. However, generalization across different environments is known to be hard. A natural solution would be to keep training after deployment in the new environment, but this cannot be done if the new environment offers no reward signal. Our work explores the use of self-supervision to allow the policy to continue training after deployment without using any rewards. While previous methods explicitly anticipate changes in the new environment, we assume no prior knowledge of those changes yet still obtain significant improvements. Empirical evaluations are performed on diverse environments from DeepMind Control suite, ViZDoom, and robotic manipulation tasks on a real robot in a continuously changing environment, controlled directly from an uncalibrated camera. Our method improves generalization in 25 out of 30 environments across various tasks and outperforms domain randomization on a majority of environments.
+			In most real world scenarios, a policy trained by reinforcement learning in one environment needs to be deployed in another, potentially quite different environment. However, generalization across different environments is known to be hard. A natural solution would be to keep training after deployment in the new environment, but this cannot be done if the new environment offers no reward signal. Our work explores the use of self-supervision to allow the policy to continue training after deployment without using any rewards. While previous methods explicitly anticipate changes in the new environment, we assume no prior knowledge of those changes yet still obtain significant improvements. Empirical evaluations are performed on diverse simulation environments from DeepMind Control suite and ViZDoom, as well as real robotic manipulation tasks in continuously changing environments, taking observations from an uncalibrated camera. Our method improves generalization in 28 out of 32 environments across various tasks and outperforms domain randomization on a majority of environments.
 		</p>
 	</div>
 	<div class="hr"></div>
@@ -131,7 +131,7 @@ a.btn-right {border-radius: 0 6px 6px 0;}
 		<p>
 			During real world deployment of learned policies, reward signals are typically inaccessible. We propose a framework for Policy Adaptation during Deployment using self-supervision, which does not require a reward signal and allows for fast adaptation to diverse and continuously changing environments. Our method requires no prior knowledge about the nature of environment changes and - crucially - we also show that our method generally does not degrade the performance of a policy in its original training environment.
 		</p>
-		<video width="100%">
+		<video width="100%" controls>
 			<source src="overview.mp4" type="video/mp4"/>
 		</video>
 		<!-- <div class="youtube">
